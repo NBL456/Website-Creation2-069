@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>หน้าแรก | เที่ยวบ้านเรา</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+<body>
+	<header>
+		<p class="site-name">เที่ยวบ้านเรา</p>
+		<nav aria-label="เมนูหลัก">
+			<ul>
+				<a href="index.html">หน้าแรก</a>
+				<a href="places.html">ที่เที่ยว</a>
+				<a href="food.html">อาหาร</a>
+				<a href="plan.html">วางแผนเที่ยว</a>
+				<a href="travel.html">ข้อมูลการเดินทาง</a>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section class="card login-card">
+			<h2>เข้าสู่ระบบ</h2>
+			<p>กรุณากรอกข้อมูลเพื่อเข้าสู่ระบบ</p>
+
+			<form>
+				<label for="username">ชื่อผู้ใช้</label>
+				<input type="text" id="username" placeholder="กรอกชื่อผู้ใช้" required>
+
+				<label for="password">รหัสผ่าน</label>
+				<div class="password-field">
+					<input type="password" id="password" placeholder="กรอกรหัสผ่าน" required>
+
+					<button type="button" id="togglePassword" class="show-password">แสดง</button>
+				</div>
+
+				<label for="userType">ประเภทผู้ใช้งาน</label>
+				<select id="userType" required>
+					<option value="user">สมาชิก (User)</option>
+					<option value="admin">ผู้ดูแล (Admin)</option>
+				</select>
+
+				<button type="submit" class="button login-button">เข้าสูระบบ</button>
+			</form>
+			<p class="login-note">ยังไม่มีบัญชีใช่หรือไม่<a href="#">สมัครสมาชิก</a></p>
+		</section>
+	</main>
+
+		<script>
+		const passwordInput = document.getElementById("password");
+		const togglePassword = document.getElementById("togglePassword");
+
+		togglePassword.addEventListener("click", function () {
+			if (passwordInput.type === "password") {
+				passwordInput.type = "text";
+				togglePassword.textContent = "ซ่อน";
+			} else {
+				passwordInput.type = "password";
+				togglePassword.textContent = "แสดง";
+			}
+		});
+		</script>
+
+	<footer>
+		<p>ลัทธพล 069 · ใบงานฝึกปฏิบัติวิชาการสร้างเว็บไซต์ทางธุรกิจ</p>
+	</footer>
+</body>
+</html>
